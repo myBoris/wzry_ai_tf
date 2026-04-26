@@ -35,6 +35,8 @@ uv sync --dev
 
 ## 运行测试
 
+运行全部 CPU/GPU 测试：
+
 ```powershell
 uv run pytest
 ```
@@ -44,6 +46,20 @@ uv run pytest
 ```powershell
 uv run pytest test
 ```
+
+只运行 CPU 版本：
+
+```powershell
+uv run pytest -m cpu
+```
+
+只运行 GPU 版本：
+
+```powershell
+uv run pytest -m gpu
+```
+
+如果机器没有 CUDA GPU，GPU 测试会自动跳过。
 
 ## 运行 Python 代码
 
@@ -72,4 +88,3 @@ uv run python your_script.py
 ```powershell
 uv sync --dev
 ```
-

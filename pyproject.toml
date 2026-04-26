@@ -16,6 +16,16 @@ dev = [
 [tool.uv]
 package = false
 
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
 [tool.pytest.ini_options]
 testpaths = ["test"]
 pythonpath = ["."]
@@ -23,3 +33,7 @@ addopts = "-p no:cacheprovider -ra --tb=short"
 log_cli = true
 log_cli_level = "INFO"
 log_cli_format = "%(levelname)s %(name)s:%(lineno)d %(message)s"
+markers = [
+    "cpu: run tests on CPU",
+    "gpu: run tests on CUDA GPU",
+]

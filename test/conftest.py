@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from pathlib import Path
 
 
 def _prefer_utf8_stdio() -> None:
@@ -14,3 +15,7 @@ def _prefer_utf8_stdio() -> None:
 
 
 _prefer_utf8_stdio()
+
+TEST_ROOT = Path(__file__).resolve().parent
+if str(TEST_ROOT) not in sys.path:
+    sys.path.insert(0, str(TEST_ROOT))
