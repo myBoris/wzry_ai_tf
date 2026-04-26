@@ -1,2 +1,49 @@
-.idea
-__pycache__
+# IDE / editor
+.idea/
+.vscode/
+
+# Python environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test / tooling cache
+.pytest_cache/
+pytest-cache-files-*/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# ML experiment outputs
+runs/
+wandb/
+checkpoints/
+outputs/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# OS files
+.DS_Store
+Thumbs.db
